@@ -29,6 +29,13 @@ def calculer_hash(fichier_path, algo="sha256"):
                 h.update(chunk)
         return h.hexdigest()
     except FileNotFoundError:
+        print(f"Erreur : Le fichier {fichier_path} est introuvable.")
+        return None
+    except PermissionError:
+        print(f"Erreur : Permission refusée pour {fichier_path}.")
+        return None
+    except Exception as e:
+        print(f"Erreur inattendue pour {fichier_path} : {e}")
         return None
 
 def trouver_doublons_par_hash(dossier, algo="sha256"):
@@ -66,7 +73,7 @@ def ecrire_rapport(compteur, fichier_log, doublons, fichier_rapport="rapport.txt
 
 if __name__ == "__main__":
     fichier_log = "log.txt"
-    dossier_a_verifier = "."  # dossier courant
+    dossier_a_verifier = sys.argv[1] if len(sys.argv) > 1 else "."  # Dossier via argument ou courant
     stats = analyser_log(fichier_log)
     doublons = trouver_doublons_par_hash(dossier_a_verifier)
     ecrire_rapport(stats, fichier_log, doublons)
