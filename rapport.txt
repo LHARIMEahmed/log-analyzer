@@ -1,0 +1,9 @@
+=== Rapport d'analyse ===
+ERROR : 2
+WARNING : 1
+INFO : 2
+
+Hash SHA256 de log.txt : df1d6b6bafa06c9f3f0049a8a5e29a69ff5850ec1e4175cc444d1b61ce6f1023
+
+=== Fichiers ayant le même hash (doublons) ===
+Aucun doublon trouvé.

@@ -1,0 +1,5 @@
+INFO: Application started
+WARNING: Deprecated function used
+ERROR: Failed to connect to server
+INFO: Retrying
+ERROR: Timeout occurred
